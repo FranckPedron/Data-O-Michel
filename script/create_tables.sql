@@ -1,0 +1,33 @@
+BEGIN
+
+CREATE TABLE IF NOT EXISTS user 
+(
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    creation_date TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS chat
+(
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id int REFERENCES user(id),
+    content TEXT,
+    date TIMESTAMPTZ NOT NULL DEFAULT now(),
+    username TEXT
+);
+
+CREATE TABLE IF NOT EXISTS video
+(
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id int REFERENCES user(id),
+    url TEXT NOT NULL,
+    name TEXT NOT NULL, 
+    date TIMESTAMPTZ NOT NULL DEFAULT now(),
+    
+);
+
+
+
+COMMIT;

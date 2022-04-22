@@ -1,0 +1,36 @@
+<!-- On part sur Bulma ? Je connais pas mais je veux bien tester -->
+<!-- c'est une lib pas mal-->
+<!-- bah go ! -->
+<!-- https://bulma.io/documentation/form/input/ -->
+<%- include('./partials/header.ejs'); -%>
+<form action="/register" method="POST">
+    <div class="field">
+      <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-danger" type="email" placeholder="john@doe.com" value="" name="email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Username</label>
+            <div class="control has-icons-left">
+                <input class="input is-success" type="text" placeholder="John Doe" name="username">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+    </div>
+    <div class="field">
+        <label class="label">Password</label>
+            <div class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password" name="password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
+    </div>
+    <input class="button is-link" class="button is-link" type="submit" value="Submit">
+</form>
+<%- include('./partials/footer.ejs'); -%>
