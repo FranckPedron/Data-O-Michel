@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>O'Twitch</title>
+    <title>O'nlyFan</title>
 
     <!-- favicon  Yann-->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -13,12 +13,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <% if ("/login") { %>
+            <link rel="stylesheet" href="/css/login.css">
+    <% } %>
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!--  -->
 
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 
     <!-- CSS for quizz and admin (AUTH) -->
@@ -28,7 +33,11 @@
 </head>
 
 <body>
-    <!-- <header>
-        <h1>HellO' world</h1>
-
-    </header> -->
+    <header class="header">
+        <div class="contenair">
+            <h1>O'nlyFan</h1>
+            <%- include('./nav.ejs'); -%>
+            <span>O'nlyFan by O'clock</span>
+        </div>
+    </header>
+    <main>

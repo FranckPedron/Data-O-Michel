@@ -47,9 +47,17 @@
 
 - les vidéos ne sont visibles que pour les utilisateurs connectés
 - les vidéos ne sont bisibles qu'au niveau de la page "/watch"
-- pas de navigation sur la homepage
+- navigation en double / non visible
  
 ### Corrigé
 
 - le site ne se lance pas !
 - Error: Failed to lookup view "homePage" in views directory "/home/teacher/Documents/Promos/Atome/data/Data-O-Michel-BNoClock/views"
+
+
+
+## AIDE
+
+J'ai besoin d'aide ?
+
+prénom - salon discord - sujet traité

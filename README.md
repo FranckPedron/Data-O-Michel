@@ -61,3 +61,9 @@ On pourra s'inscrire via un formulaire qui devra comporter un champ pour le logi
 Au départ, on ne va prévoir qu'un salon unique pour tous les utilisateurs.
 
 Sur cette page, on doit avoir un espace pour diffuser la vidéo, un espace pour chatter avec les utilisateurs en train de regarder.
+
+## Parcours utilisateur
+
+Un utilisateur arrive sur le site, il doit se connecter.
+
+Une fois connecté, il arrive sur la page /watch et peut saisir une vidéo à ajouter à la liste des vidéos déjà prévues sur la page.

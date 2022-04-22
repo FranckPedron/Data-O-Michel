@@ -5,8 +5,8 @@ const router = require("./app/router");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+// const http = require('http').Server(app);
+// const io = require('socket.io')(http);
 
 
 app.set("views", path.join(__dirname, "app/views"));
@@ -26,11 +26,11 @@ app.use(function(req, res, next) {
 app.use(router);
 
 
-io.on('connection', (socket) => {
-    socket.on('chat message', msg => {
-      io.emit('chat message', msg);
-    });
-  });
+// io.on('connection', (socket) => {
+//     socket.on('chat message', msg => {
+//       io.emit('chat message', msg);
+//     });
+//   });
 
 
 

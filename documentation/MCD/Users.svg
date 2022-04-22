@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="316" height="304" view_box="0 0 316 304"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Fri, 22 Apr 2022 02:07:46</desc>
+
+<rect id="frame" x="0" y="0" width="316" height="304" fill="#f7f7f7" stroke="none" stroke-width="0"/>
+
+<!-- Association POST IN -->
+<line x1="139" y1="135" x2="139" y2="34" stroke="#9970ab" stroke-width="2"/>
+<text x="144.0" y="76" fill="#1b7837" font-family="Verdana" font-size="12">1,N</text>
+<line x1="260" y1="236" x2="139" y2="34" stroke="#9970ab" stroke-width="2"/>
+<text x="225.019813979" y="169" fill="#1b7837" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-POST IN">
+	<path d="M 158 9 a 14 14 90 0 1 14 14 V 34 h -66 V 23 a 14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+	<path d="M 172 34.0 v 11 a 14 14 90 0 1 -14 14 H 120 a 14 14 90 0 1 -14 -14 V 34.0 H 66" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+	<rect x="106" y="9" width="66" height="50" fill="none" rx="14" stroke="#9970ab" stroke-width="2"/>
+	<line x1="106" y1="34" x2="172" y2="34" stroke="#9970ab" stroke-width="1"/>
+	<text x="113" y="26.7" fill="#000000" font-family="Verdana" font-size="12">POST IN</text>
+</g>
+
+<!-- Association POST video -->
+<line x1="37" y1="236" x2="139" y2="236" stroke="#9970ab" stroke-width="2"/>
+<text x="70" y="253.0" fill="#1b7837" font-family="Verdana" font-size="12">1,N</text>
+<line x1="260" y1="236" x2="139" y2="236" stroke="#9970ab" stroke-width="2"/>
+<text x="186" y="253.0" fill="#1b7837" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-POST video">
+	<path d="M 167 211 a 14 14 90 0 1 14 14 V 236 h -84 V 225 a 14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+	<path d="M 181 236.0 v 11 a 14 14 90 0 1 -14 14 H 111 a 14 14 90 0 1 -14 -14 V 236.0 H 84" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+	<rect x="97" y="211" width="84" height="50" fill="none" rx="14" stroke="#9970ab" stroke-width="2"/>
+	<line x1="97" y1="236" x2="181" y2="236" stroke="#9970ab" stroke-width="1"/>
+	<text x="104" y="228.7" fill="#000000" font-family="Verdana" font-size="12">POST video</text>
+</g>
+
+<!-- Entity VIDEO -->
+<g id="entity-VIDEO">
+	<g id="frame-VIDEO">
+		<rect x="9" y="177" width="56" height="25" fill="#a6dba0" stroke="#a6dba0" stroke-width="0"/>
+		<rect x="9" y="202.0" width="56" height="93" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0"/>
+		<rect x="9" y="177" width="56" height="118" fill="none" stroke="#5aae61" stroke-width="2"/>
+		<line x1="9" y1="202" x2="65" y2="202" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="16" y="194.7" fill="#000000" font-family="Verdana" font-size="12">VIDEO</text>
+	<text x="14" y="219.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="14" y1="222" x2="26" y2="222" stroke="#000000" stroke-width="1"/>
+	<text x="14" y="236.8" fill="#000000" font-family="Verdana" font-size="12">user_id</text>
+	<text x="14" y="253.8" fill="#000000" font-family="Verdana" font-size="12">url</text>
+	<text x="14" y="270.8" fill="#000000" font-family="Verdana" font-size="12">name</text>
+	<text x="14" y="287.8" fill="#000000" font-family="Verdana" font-size="12">date</text>
+</g>
+
+<!-- Entity USER -->
+<g id="entity-USER">
+	<g id="frame-USER">
+		<rect x="213" y="177" width="94" height="25" fill="#a6dba0" stroke="#a6dba0" stroke-width="0"/>
+		<rect x="213" y="202.0" width="94" height="93" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0"/>
+		<rect x="213" y="177" width="94" height="118" fill="none" stroke="#5aae61" stroke-width="2"/>
+		<line x1="213" y1="202" x2="307" y2="202" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="243" y="194.7" fill="#000000" font-family="Verdana" font-size="12">USER</text>
+	<text x="218" y="219.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="218" y1="222" x2="230" y2="222" stroke="#000000" stroke-width="1"/>
+	<text x="218" y="236.8" fill="#000000" font-family="Verdana" font-size="12">email</text>
+	<text x="218" y="253.8" fill="#000000" font-family="Verdana" font-size="12">username</text>
+	<text x="218" y="270.8" fill="#000000" font-family="Verdana" font-size="12">mdp</text>
+	<text x="218" y="287.8" fill="#000000" font-family="Verdana" font-size="12">creation_date</text>
+</g>
+
+<!-- Entity CHAT -->
+<g id="entity-CHAT">
+	<g id="frame-CHAT">
+		<rect x="111" y="84" width="56" height="25" fill="#a6dba0" stroke="#a6dba0" stroke-width="0"/>
+		<rect x="111" y="109.0" width="56" height="77" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0"/>
+		<rect x="111" y="84" width="56" height="102" fill="none" stroke="#5aae61" stroke-width="2"/>
+		<line x1="111" y1="109" x2="167" y2="109" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="122" y="101.7" fill="#000000" font-family="Verdana" font-size="12">CHAT</text>
+	<text x="116" y="126.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="116" y1="129" x2="128" y2="129" stroke="#000000" stroke-width="1"/>
+	<text x="116" y="143.8" fill="#000000" font-family="Verdana" font-size="12">user_id</text>
+	<text x="116" y="160.8" fill="#000000" font-family="Verdana" font-size="12">content</text>
+	<text x="116" y="177.8" fill="#000000" font-family="Verdana" font-size="12">date</text>
+</g>
+</svg>

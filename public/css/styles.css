@@ -27,13 +27,3 @@ html {
 
 /*Yep go fof*/
 /* RIP les épileptiques ^^ */
-
-  .footer {
-    color: var(--blue);
-    font-size: 20px;
-    background-color: yellow;
-    width: 30px;
-    height: 40px;
-    border-top: 2px solid var(--fof);
-    
-  }

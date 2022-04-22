@@ -1,5 +1,5 @@
 const dataMapper = require('../model/datamapper.js');
-// tu veux de l'aide BB ? Ben il faut qu'on se mette ok sur la couche en dessous la couche ? culotte
+const APIError = require('../middleware/APIError');
 const controller = {
   /**
    * Render the home page, passing all compulsory datas
@@ -30,7 +30,10 @@ const controller = {
   async createUser(req,res) {
     // User contient email / username / password
     const user = req.body.user;
-    await dataMapper.createUser(user)
+    const result = await dataMapper.createUser(user);
+    if(!result.rowCount){
+      throw new APIError ("Impossible d'enregistrer l'utilisateur en base");
+    };
     res.redirect('/login');
   },
   /**
@@ -52,7 +55,10 @@ const controller = {
    */
   async logUser(req,res) {
     const user = req.body.user;
-    await dataMapper.loginUser(user);
+    const result = await dataMapper.loginUser(user);
+    if(!result.rowCount){
+      throw new APIError ("Les credentials sont erronés.");
+    };
     res.redirect('/');
   },
   /**
@@ -66,9 +72,22 @@ const controller = {
     const allVideos = await dataMapper.getAllVideo();
     // On récupère tous les messages du chat de la vidéo
     const allChatMessages = await dataMapper.getAllChatMessages();
-    res.render('watchPage', {
-      allVideos
+    res.render('watch', {
+      allVideos, allChatMessages
     });
+  },
+  /**
+   * Post a new message in chat
+   * @param {req}
+   * @param {res}
+   * @returns {HTML Redirection}
+   */
+  async postMessage(req,res) {
+    // un obket message contien userid - content
+    const message = req.body.message;
+    await dataMapper.postChat(message);
+    //Redirection provisoire, ne prend pas en compte le websocket
+    res.redirect('/watch');
   },
 };
 

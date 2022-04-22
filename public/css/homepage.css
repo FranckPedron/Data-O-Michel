@@ -1,9 +1,13 @@
 body {
   text-align: center;
 }
-.header {
-
+.contenair {
+  display: flex;
 }
+.header {
+  color: black;
+}
+
 
 .article__main {
 
