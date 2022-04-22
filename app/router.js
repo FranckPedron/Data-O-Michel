@@ -3,6 +3,7 @@ const controller = require('./controller/controller.js');
 const router = Router();
 const routerWrapper = require("./middleware/routerWrapper");
 const handleError = require('./middleware/errorHandler.js');
+const security = require("./middleware/security");
 
 router
   .get('/', controller.homePage)
@@ -10,8 +11,8 @@ router
   .post ('/subscribe', routerWrapper(controller.createUser))
   .get ('/login', routerWrapper(controller.loginPage))
   .post ('/login', routerWrapper(controller.logUser))
-  .get ('/watch', routerWrapper(controller.watchPage))
-  .post ('/watch', routerWrapper(controller.watchPage))
+  .get ('/watch',security.check, routerWrapper(controller.watchPage))
+  .post ('/watch',security.check, routerWrapper(controller.watchPage))
   .use(handleError);
 
 

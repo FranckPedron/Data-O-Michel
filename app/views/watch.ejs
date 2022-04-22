@@ -1,6 +1,45 @@
 <%- include('./partials/header.ejs'); -%>
 
 <!--video a gauche et tchat a droite-->
+<% for (video of allVideos) {%> 
+<video src="<%= video.url %>"></video>
+<%}%>
 
 
+<div class="container-row">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Qvq6VSMKDVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="container-column">
+        <ul id="messages" class="container-column"></ul>
+        <form id="form">
+            <input type="text" id="message" name="message" value="" placeholder="write your message here">
+            <button>envoyer</button>
+        </form>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+   const username="<%=username%>";
+   console.log(username);
+  var socket = io(); // le canal entre le client et le serveur
+  var messages = document.getElementById('messages');
+      var form = document.getElementById('form');
+      var input = document.getElementById('message');
+
+      // je gère l'envoi de message
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit('chat message', username +" : "+input.value);
+          input.value = '';
+        }
+      });
+
+      // je gère l'arrivée de nouveaux messages
+      socket.on('chat message', function(msg) {
+        var item = document.createElement('li');
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+</script>
 <%- include('./partials/footer.ejs'); -%>

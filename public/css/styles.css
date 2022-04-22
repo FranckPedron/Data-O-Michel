@@ -27,3 +27,14 @@ html {
 
 /*Yep go fof*/
 /* RIP les épileptiques ^^ */
+
+.container-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container-column{
+  display: flex;
+  flex-direction: column;
+}

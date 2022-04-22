@@ -7,7 +7,7 @@ const dataMapper = {
       text: `SELECT * FROM "video";`
     };
     const allVideo = await client.query(query);
-    return allVideo;
+    return allVideo.rows;
   },
 
   async getVideoBYId(video_id){
@@ -16,7 +16,7 @@ const dataMapper = {
       values: [video_id]
     };
     const video = await client.query(query);
-    return video;
+    return video.rows[0];
   },
 
   async getAllChatMessages() {
@@ -37,6 +37,7 @@ const dataMapper = {
   },
 
   async createUser(user) {
+    console.log(user);
     const query = {
       text: `INSERT INTO "user" (email, username, password) VALUES($1, $2, $3);`,
       values: [user.email, user.username, user.password]
@@ -47,8 +48,8 @@ const dataMapper = {
 
   async loginUser(user) {
     const query = {
-      text: `SELECT username, password FROM "user" WHERE username = $1 AND password = $2;`,
-      values: [user.username, user.password]
+      text: `SELECT username FROM "user" WHERE email = $1 AND password = $2;`,
+      values: [user.email, user.password]
     };
     const userInDB = await client.query(query);
     return userInDB;

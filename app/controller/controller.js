@@ -1,5 +1,10 @@
 const dataMapper = require('../model/datamapper.js');
 const APIError = require('../middleware/APIError');
+const fetch = require("node-fetch");
+
+const jwt = require('jsonwebtoken');
+const secretKey = "clef pour déchiffrer le message";
+
 const controller = {
   /**
    * Render the home page, passing all compulsory datas
@@ -29,7 +34,7 @@ const controller = {
    */
   async createUser(req,res) {
     // User contient email / username / password
-    const user = req.body.user;
+    const user = req.body;
     const result = await dataMapper.createUser(user);
     if(!result.rowCount){
       throw new APIError ("Impossible d'enregistrer l'utilisateur en base");
@@ -54,12 +59,25 @@ const controller = {
    * @returns {HTML Redirection}
    */
   async logUser(req,res) {
-    const user = req.body.user;
-    const result = await dataMapper.loginUser(user);
+    const user = req.body;
+    /*const result = await dataMapper.loginUser(user);*/
+    // on enlève l'appel au dataMapper pour appeler notre serveur de login
+
+    // je prépare mon envoi
+    const data = jwt.sign(user, secretKey);
+    console.log(data);
+    const result = await fetch("http://localhost:3001/login",{
+      method:"POST",
+      body:JSON.stringify({data}),
+      headers: {'Content-Type': 'application/json'}
+    });
+
     if(!result.rowCount){
       throw new APIError ("Les credentials sont erronés.");
     };
-    res.redirect('/');
+    req.session.user = result.rows[0];
+    //console.log("session",req.session.user)
+    res.redirect('/watch');
   },
   /**
    * Render the watch page, passing all compulsory datas
@@ -73,7 +91,7 @@ const controller = {
     // On récupère tous les messages du chat de la vidéo
     const allChatMessages = await dataMapper.getAllChatMessages();
     res.render('watch', {
-      allVideos, allChatMessages
+      allVideos, allChatMessages,username:req.session.user.username
     });
   },
   /**
